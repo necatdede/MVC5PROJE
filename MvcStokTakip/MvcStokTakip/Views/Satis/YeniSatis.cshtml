@@ -1,0 +1,32 @@
+﻿@model MvcStokTakip.Models.Entity.tblsatis
+@{
+    ViewBag.Title = "YeniSatis";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+
+    <label>Ürün</label>
+    @Html.DropDownListFor(x => x.tblurun.id, (List<SelectListItem>)ViewBag.urun, new { @class = "form-control" })
+    <br />
+
+    <label>Personel</label>
+    @Html.DropDownListFor(x => x.tblpersonel.id, (List<SelectListItem>)ViewBag.personel, new { @class = "form-control" })
+    <br />
+
+    <label>Müşteri</label>
+    @Html.DropDownListFor(x => x.tblmusteri.id, (List<SelectListItem>)ViewBag.musteri, new { @class = "form-control" })
+    <br />
+
+    <label>Fiyat</label>
+    @Html.TextBoxFor(x => x.fiyat, new { @class = "form-control" })
+    <br />
+
+
+    <button class="btn btn-primary">Satış Yap</button>
+
+
+
+
+
+</form>

@@ -1,0 +1,37 @@
+﻿@model MvcStokTakip.Models.Entity.tblurun
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("UrunGuncelle", "Urun", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.id, new { @class = "form-control" })
+    <label>Ürün Ad</label>
+    @Html.TextBoxFor(x => x.ad, new { @class = "form-control" })
+    <br />
+
+    <label>Marka</label>
+    @Html.TextBoxFor(x => x.marka, new { @class = "form-control" })
+    <br />
+
+    <label>Stok</label>
+    @Html.TextBoxFor(x => x.stok, new { @class = "form-control" })
+    <br />
+
+    <label>Alış Fiyat</label>
+    @Html.TextBoxFor(x => x.alisfiyat, new { @class = "form-control" })
+    <br />
+
+    <label>Satış Fiyat</label>
+    @Html.TextBoxFor(x => x.satisfiyat, new { @class = "form-control" })
+    <br />
+
+    <label>Kategori</label>
+    @Html.DropDownListFor(x => x.tblkategori.id,(List<SelectListItem>)ViewBag.urunkategori,new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-warning">Ürün Güncelle</button>
+
+}
+
